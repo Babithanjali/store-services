@@ -16,10 +16,8 @@ http://localhost:3000/item?keyword=backpack
 None needed
 
 # Error Codes
-4xx
-Keyword is mandatory
-5xx
-Server is not started
+4xx - Keyword is mandatory
+5xx - Server is not started
 
 # Rate limit
 2 requests per second
