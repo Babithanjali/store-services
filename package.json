@@ -1,0 +1,32 @@
+{
+  "name": "myproject",
+  "version": "1.0.0",
+  "description": "Store service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "start": "./node_modules/nodemon/bin/nodemon.js store.js"
+  },
+  "author": "Babitha",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "async": "^2.6.1",
+    "axios": "^0.16.2",
+    "csv": "^3.1.0",
+    "fast-csv": "^2.4.1",
+    "hapi": "^16.6.3",
+    "joi": "^10.6.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.2",
+    "sax": "^1.2.4",
+    "simple-rate-limiter": "^0.2.3",
+    "sync-request": "^6.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.17.5",
+    "ws": "3.3.2"
+  }
+}
