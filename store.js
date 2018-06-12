@@ -63,26 +63,30 @@ server.route({
 			var resultObj = [];
 			itemsMetaData.forEach(function(value){
 				var keyword = JSON.stringify(paramsStr.keyword);
-				//check if either the "shortDescription" or "longDescription" contains the keyword.
-				var shortDesc = "";
-				if(value.hasOwnProperty("shortDescription")){
-					shortDesc = value["shortDescription"];
-				}
-				var longDesc = "";
-				if(value.hasOwnProperty("longDescription")){
-					longDesc = value["longDescription"];
-				}
-				// if either of the descriptions contain the keyword, add it to the resultObject
-				if(shortDesc != null || longDesc != null){
-					keyword = keyword.replace(/^"(.*)"$/, '$1');
-					if(shortDesc.toLowerCase().includes(keyword.toLowerCase()) || longDesc.toLowerCase().includes(keyword.toLowerCase())){
-						resultObj.push(value);
+				keyword = keyword.replace(/^"(.*)"$/, '$1'); //strip the string of quotes on either ends
+				keyword = keyword.trim(); //trim whitespace characters
+				if(keyword.length > 0){
+					//check if either the "shortDescription" or "longDescription" contains the keyword.
+					var shortDesc = "";
+					if(value.hasOwnProperty("shortDescription")){
+						shortDesc = value["shortDescription"];
+					}
+					var longDesc = "";
+					if(value.hasOwnProperty("longDescription")){
+						longDesc = value["longDescription"];
+					}
+					// if either of the descriptions contain the keyword, add it to the resultObject
+					if(shortDesc != null || longDesc != null){
+						if(shortDesc.toLowerCase().includes(keyword.toLowerCase()) || longDesc.toLowerCase().includes(keyword.toLowerCase())){
+							resultObj.push(value);
+						}
 					}
 				}
+				
 			});
 			var responseStr = {};
 			if(resultObj.length == 0){
-				responseStr = {"Products" : "No products matched the keyword"};
+				responseStr = {"Products" : "Sorry, no products matched the keyword. Please try with different keywords"};
 			}
 			else{
 				responseStr = {"Products" : resultObj};
