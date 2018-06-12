@@ -80,7 +80,15 @@ server.route({
 					}
 				}
 			});
-			return response(resultObj);
+			var responseStr = {};
+			if(resultObj.length == 0){
+				responseStr = {"Products" : "No products matched the keyword"};
+			}
+			else{
+				responseStr = {"Products" : resultObj};
+			}
+			
+			return response(responseStr);
       	}
     }   
 });
