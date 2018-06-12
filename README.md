@@ -3,11 +3,11 @@ This is a REST search API that takes in a "keyword" as a query parameter and ret
 list of products containing this keyword in their description.
 
 # Developer notes
-REST API developed using Hapi library<br>
-Requests per second limited using "simple-rate-limiter"<br>
-Validation done using "Joi"<br>
-Csv file downloaded and placed in root directory<br>
-Csv file reading using "fast-csv"<br>
+- REST API developed using Hapi library<br>
+- Requests per second limited using "simple-rate-limiter"<br>
+- Validation done using "Joi"<br>
+- Csv file downloaded and placed in root directory<br>
+- Csv file reading using "fast-csv"<br>
 
 # Usage
 1. Launch lookupKeyword.html<br>
