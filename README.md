@@ -10,6 +10,11 @@ Csv file downloaded and placed in root directory<br>
 Csv file reading using "fast-csv"<br>
 
 # Usage
+1. Launch lookupKeyword.html<br>
+2. Enter the keyword to lookup, enter submit<br>
+3. For a valid existing keyword, the API returns a list of all the products containing the keyword<br>
+
+# REST API Usage
 http://localhost:3000/item?keyword={keyword} <br>
 Example: <br>
 http://localhost:3000/item?keyword=backpack <br>
